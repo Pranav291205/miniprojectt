@@ -1,0 +1,44 @@
+{
+  "modelName": "TrafficIQ GBDT Forecaster",
+  "modelType": "HistGradientBoostingRegressor (ONNX Opset 14)",
+  "inputTensor": "float_input",
+  "inputDimensions": 17,
+  "outputTensor": "variable",
+  "supportedHorizons": [
+    15,
+    30,
+    60
+  ],
+  "speedUnit": "mph",
+  "trainedOn": "PEMS-BAY Benchmark (Caltrans District 4, California Bay Area)",
+  "featureNames": [
+    "speed_lag_0",
+    "speed_lag_1",
+    "speed_lag_2",
+    "speed_lag_3",
+    "speed_lag_6",
+    "speed_lag_12",
+    "rolling_mean_1h",
+    "rolling_std_1h",
+    "hour",
+    "minute",
+    "day_of_week",
+    "is_weekend",
+    "sin_hour",
+    "cos_hour",
+    "sin_dow",
+    "cos_dow",
+    "horizon_min"
+  ],
+  "testSetMetrics": {
+    "overallMae": 2.33,
+    "overallRmse": 5.055,
+    "overallR2": 0.8166,
+    "baselineMae": 2.6,
+    "baselineRmse": 6.204,
+    "baselineR2": 0.7238,
+    "maeImprovementPercent": 10.38,
+    "rmseImprovementPercent": 18.52
+  },
+  "status": "READY_FOR_INFERENCE"
+}

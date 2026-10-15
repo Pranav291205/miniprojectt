@@ -1,0 +1,422 @@
+[
+  {
+    "step": 1,
+    "actualSpeed": 70.3,
+    "predictedSpeed": 71.9,
+    "persistenceBaseline": 72.7,
+    "horizon": 15
+  },
+  {
+    "step": 2,
+    "actualSpeed": 70.5,
+    "predictedSpeed": 70.7,
+    "persistenceBaseline": 70.6,
+    "horizon": 15
+  },
+  {
+    "step": 3,
+    "actualSpeed": 70.5,
+    "predictedSpeed": 71.1,
+    "persistenceBaseline": 71.8,
+    "horizon": 15
+  },
+  {
+    "step": 4,
+    "actualSpeed": 71.5,
+    "predictedSpeed": 70.9,
+    "persistenceBaseline": 71.1,
+    "horizon": 15
+  },
+  {
+    "step": 5,
+    "actualSpeed": 66.9,
+    "predictedSpeed": 67.1,
+    "persistenceBaseline": 67.4,
+    "horizon": 15
+  },
+  {
+    "step": 6,
+    "actualSpeed": 68.7,
+    "predictedSpeed": 67.3,
+    "persistenceBaseline": 67.5,
+    "horizon": 15
+  },
+  {
+    "step": 7,
+    "actualSpeed": 72.1,
+    "predictedSpeed": 72.5,
+    "persistenceBaseline": 73.9,
+    "horizon": 15
+  },
+  {
+    "step": 8,
+    "actualSpeed": 70.0,
+    "predictedSpeed": 71.1,
+    "persistenceBaseline": 71.4,
+    "horizon": 15
+  },
+  {
+    "step": 9,
+    "actualSpeed": 60.9,
+    "predictedSpeed": 62.0,
+    "persistenceBaseline": 63.3,
+    "horizon": 15
+  },
+  {
+    "step": 10,
+    "actualSpeed": 68.0,
+    "predictedSpeed": 63.5,
+    "persistenceBaseline": 63.6,
+    "horizon": 15
+  },
+  {
+    "step": 11,
+    "actualSpeed": 65.7,
+    "predictedSpeed": 64.6,
+    "persistenceBaseline": 65.1,
+    "horizon": 15
+  },
+  {
+    "step": 12,
+    "actualSpeed": 71.9,
+    "predictedSpeed": 70.4,
+    "persistenceBaseline": 70.0,
+    "horizon": 15
+  },
+  {
+    "step": 13,
+    "actualSpeed": 72.1,
+    "predictedSpeed": 71.1,
+    "persistenceBaseline": 71.2,
+    "horizon": 15
+  },
+  {
+    "step": 14,
+    "actualSpeed": 70.1,
+    "predictedSpeed": 71.2,
+    "persistenceBaseline": 71.5,
+    "horizon": 15
+  },
+  {
+    "step": 15,
+    "actualSpeed": 34.1,
+    "predictedSpeed": 25.7,
+    "persistenceBaseline": 27.5,
+    "horizon": 15
+  },
+  {
+    "step": 16,
+    "actualSpeed": 67.1,
+    "predictedSpeed": 66.7,
+    "persistenceBaseline": 67.1,
+    "horizon": 15
+  },
+  {
+    "step": 17,
+    "actualSpeed": 69.9,
+    "predictedSpeed": 67.4,
+    "persistenceBaseline": 66.9,
+    "horizon": 15
+  },
+  {
+    "step": 18,
+    "actualSpeed": 70.4,
+    "predictedSpeed": 71.2,
+    "persistenceBaseline": 70.7,
+    "horizon": 15
+  },
+  {
+    "step": 19,
+    "actualSpeed": 70.1,
+    "predictedSpeed": 70.3,
+    "persistenceBaseline": 69.9,
+    "horizon": 15
+  },
+  {
+    "step": 20,
+    "actualSpeed": 74.7,
+    "predictedSpeed": 71.6,
+    "persistenceBaseline": 72.1,
+    "horizon": 15
+  },
+  {
+    "step": 21,
+    "actualSpeed": 50.5,
+    "predictedSpeed": 26.7,
+    "persistenceBaseline": 22.8,
+    "horizon": 15
+  },
+  {
+    "step": 22,
+    "actualSpeed": 67.5,
+    "predictedSpeed": 68.6,
+    "persistenceBaseline": 69.4,
+    "horizon": 15
+  },
+  {
+    "step": 23,
+    "actualSpeed": 72.8,
+    "predictedSpeed": 71.2,
+    "persistenceBaseline": 72.4,
+    "horizon": 15
+  },
+  {
+    "step": 24,
+    "actualSpeed": 72.2,
+    "predictedSpeed": 71.6,
+    "persistenceBaseline": 72.7,
+    "horizon": 15
+  },
+  {
+    "step": 25,
+    "actualSpeed": 70.4,
+    "predictedSpeed": 71.2,
+    "persistenceBaseline": 70.9,
+    "horizon": 15
+  },
+  {
+    "step": 26,
+    "actualSpeed": 63.0,
+    "predictedSpeed": 61.4,
+    "persistenceBaseline": 63.6,
+    "horizon": 15
+  },
+  {
+    "step": 27,
+    "actualSpeed": 67.5,
+    "predictedSpeed": 66.7,
+    "persistenceBaseline": 68.4,
+    "horizon": 15
+  },
+  {
+    "step": 28,
+    "actualSpeed": 67.3,
+    "predictedSpeed": 65.6,
+    "persistenceBaseline": 67.3,
+    "horizon": 15
+  },
+  {
+    "step": 29,
+    "actualSpeed": 72.5,
+    "predictedSpeed": 70.7,
+    "persistenceBaseline": 70.4,
+    "horizon": 15
+  },
+  {
+    "step": 30,
+    "actualSpeed": 71.1,
+    "predictedSpeed": 70.6,
+    "persistenceBaseline": 70.5,
+    "horizon": 15
+  },
+  {
+    "step": 31,
+    "actualSpeed": 70.6,
+    "predictedSpeed": 70.5,
+    "persistenceBaseline": 70.5,
+    "horizon": 15
+  },
+  {
+    "step": 32,
+    "actualSpeed": 58.2,
+    "predictedSpeed": 55.2,
+    "persistenceBaseline": 59.7,
+    "horizon": 15
+  },
+  {
+    "step": 33,
+    "actualSpeed": 62.8,
+    "predictedSpeed": 63.1,
+    "persistenceBaseline": 63.8,
+    "horizon": 15
+  },
+  {
+    "step": 34,
+    "actualSpeed": 69.3,
+    "predictedSpeed": 69.5,
+    "persistenceBaseline": 70.8,
+    "horizon": 15
+  },
+  {
+    "step": 35,
+    "actualSpeed": 70.4,
+    "predictedSpeed": 71.1,
+    "persistenceBaseline": 70.9,
+    "horizon": 15
+  },
+  {
+    "step": 36,
+    "actualSpeed": 71.4,
+    "predictedSpeed": 71.0,
+    "persistenceBaseline": 71.0,
+    "horizon": 15
+  },
+  {
+    "step": 37,
+    "actualSpeed": 71.3,
+    "predictedSpeed": 72.4,
+    "persistenceBaseline": 73.0,
+    "horizon": 15
+  },
+  {
+    "step": 38,
+    "actualSpeed": 69.7,
+    "predictedSpeed": 70.2,
+    "persistenceBaseline": 70.6,
+    "horizon": 15
+  },
+  {
+    "step": 39,
+    "actualSpeed": 68.5,
+    "predictedSpeed": 65.9,
+    "persistenceBaseline": 66.5,
+    "horizon": 15
+  },
+  {
+    "step": 40,
+    "actualSpeed": 65.1,
+    "predictedSpeed": 66.5,
+    "persistenceBaseline": 65.7,
+    "horizon": 15
+  },
+  {
+    "step": 41,
+    "actualSpeed": 71.3,
+    "predictedSpeed": 71.0,
+    "persistenceBaseline": 71.9,
+    "horizon": 15
+  },
+  {
+    "step": 42,
+    "actualSpeed": 71.1,
+    "predictedSpeed": 70.4,
+    "persistenceBaseline": 69.9,
+    "horizon": 15
+  },
+  {
+    "step": 43,
+    "actualSpeed": 70.8,
+    "predictedSpeed": 70.9,
+    "persistenceBaseline": 71.2,
+    "horizon": 15
+  },
+  {
+    "step": 44,
+    "actualSpeed": 68.9,
+    "predictedSpeed": 70.2,
+    "persistenceBaseline": 70.5,
+    "horizon": 15
+  },
+  {
+    "step": 45,
+    "actualSpeed": 66.9,
+    "predictedSpeed": 67.1,
+    "persistenceBaseline": 66.5,
+    "horizon": 15
+  },
+  {
+    "step": 46,
+    "actualSpeed": 72.4,
+    "predictedSpeed": 69.7,
+    "persistenceBaseline": 71.2,
+    "horizon": 15
+  },
+  {
+    "step": 47,
+    "actualSpeed": 72.8,
+    "predictedSpeed": 71.1,
+    "persistenceBaseline": 71.3,
+    "horizon": 15
+  },
+  {
+    "step": 48,
+    "actualSpeed": 69.6,
+    "predictedSpeed": 71.1,
+    "persistenceBaseline": 71.1,
+    "horizon": 15
+  },
+  {
+    "step": 49,
+    "actualSpeed": 57.6,
+    "predictedSpeed": 46.0,
+    "persistenceBaseline": 55.7,
+    "horizon": 15
+  },
+  {
+    "step": 50,
+    "actualSpeed": 65.6,
+    "predictedSpeed": 66.0,
+    "persistenceBaseline": 66.8,
+    "horizon": 15
+  },
+  {
+    "step": 51,
+    "actualSpeed": 70.1,
+    "predictedSpeed": 68.2,
+    "persistenceBaseline": 69.1,
+    "horizon": 15
+  },
+  {
+    "step": 52,
+    "actualSpeed": 72.3,
+    "predictedSpeed": 70.7,
+    "persistenceBaseline": 70.4,
+    "horizon": 15
+  },
+  {
+    "step": 53,
+    "actualSpeed": 70.8,
+    "predictedSpeed": 71.1,
+    "persistenceBaseline": 71.4,
+    "horizon": 15
+  },
+  {
+    "step": 54,
+    "actualSpeed": 77.8,
+    "predictedSpeed": 73.2,
+    "persistenceBaseline": 73.5,
+    "horizon": 15
+  },
+  {
+    "step": 55,
+    "actualSpeed": 19.8,
+    "predictedSpeed": 21.4,
+    "persistenceBaseline": 19.2,
+    "horizon": 15
+  },
+  {
+    "step": 56,
+    "actualSpeed": 66.6,
+    "predictedSpeed": 65.6,
+    "persistenceBaseline": 66.6,
+    "horizon": 15
+  },
+  {
+    "step": 57,
+    "actualSpeed": 72.8,
+    "predictedSpeed": 71.2,
+    "persistenceBaseline": 72.7,
+    "horizon": 15
+  },
+  {
+    "step": 58,
+    "actualSpeed": 71.8,
+    "predictedSpeed": 71.1,
+    "persistenceBaseline": 71.0,
+    "horizon": 15
+  },
+  {
+    "step": 59,
+    "actualSpeed": 70.7,
+    "predictedSpeed": 70.8,
+    "persistenceBaseline": 70.8,
+    "horizon": 15
+  },
+  {
+    "step": 60,
+    "actualSpeed": 63.1,
+    "predictedSpeed": 63.1,
+    "persistenceBaseline": 64.4,
+    "horizon": 15
+  }
+]

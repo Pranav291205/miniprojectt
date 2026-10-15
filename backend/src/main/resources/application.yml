@@ -1,0 +1,26 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: trafficiq-backend
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:h2}
+  jpa:
+    open-in-view: false
+
+trafficiq:
+  model:
+    onnx-path: "model/trafficiq_model.onnx"
+    metadata-path: "model/model_metadata.json"
+    sensor-catalog-path: "model/sensor_catalog.json"
+    evaluation-report-path: "model/evaluation_report.json"
+    sample-eval-path: "model/sample_eval_points.json"
+  routing:
+    osrm-url: "https://router.project-osrm.org/route/v1/driving"
+    timeout-ms: 5000
+  maps:
+    google-api-key: ${MAPS_API_KEY:AIzaSyD0JIwXnofK8a7xvVrlSuYHqA3iwUcubg4}
+

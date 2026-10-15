@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><title>TrafficIQ — Predictive Traffic Intelligence</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-secondary-container":"#c4abff","on-surface-variant":"#bcc9cd","primary-fixed-dim":"#4cd7f6","inverse-surface":"#dfe2ee","surface-container-lowest":"#0a0e16","on-tertiary-container":"#00452e","surface-variant":"#31353e","on-background":"#dfe2ee","on-tertiary-fixed":"#002113","surface-container-high":"#262a33","on-tertiary":"#003824","primary-container":"#06b6d4","secondary-fixed-dim":"#d0bcff","surface-dim":"#0f131c","tertiary":"#4edea3","inverse-on-surface":"#2c3039","tertiary-container":"#1bbd85","inverse-primary":"#00687a","surface-container-low":"#181c24","tertiary-fixed":"#6ffbbe","error":"#ffb4ab","on-primary-fixed":"#001f26","on-primary-fixed-variant":"#004e5c","outline-variant":"#3d494c","surface-container":"#1c2028","error-container":"#93000a","primary-fixed":"#acedff","on-secondary-fixed-variant":"#5516be","primary":"#4cd7f6","tertiary-fixed-dim":"#4edea3","secondary":"#d0bcff","on-secondary":"#3c0091","surface-bright":"#353942","on-primary-container":"#00424f","surface-container-highest":"#31353e","secondary-container":"#571bc1","secondary-fixed":"#e9ddff","surface":"#0f131c","on-primary":"#003640","background":"#0f131c","on-secondary-fixed":"#23005c","outline":"#869397","on-surface":"#dfe2ee","surface-tint":"#4cd7f6","on-error-container":"#ffdad6","on-error":"#690005","on-tertiary-fixed-variant":"#005236"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-sm":"0.5rem","space-lg":"1.25rem","space-md":"0.75rem","space-xs":"0.25rem","margin":"1rem","gutter-desktop":"1.5rem","gutter":"1rem","space-xl":"2rem","margin-desktop":"2rem"},fontFamily:{"headline-sm":["Inter"],"label-md":["JetBrains Mono"],"headline-xl":["Inter"],"body-lg":["Inter"],"body-sm":["Inter"],"label-lg":["JetBrains Mono"],"headline-md":["Inter"],"body-md":["Inter"],"headline-xl-mobile":["Inter"],"headline-lg":["Inter"],"label-sm":["JetBrains Mono"]},fontSize:{"headline-sm":["1rem",{"lineHeight":"1.5rem","letterSpacing":"-0.01em","fontWeight":"600"}],"label-md":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0.03em","fontWeight":"500"}],"headline-xl":["2.25rem",{"lineHeight":"2.75rem","letterSpacing":"-0.025em","fontWeight":"700"}],"body-lg":["1rem",{"lineHeight":"1.5rem","fontWeight":"400"}],"body-sm":["0.75rem",{"lineHeight":"1rem","fontWeight":"400"}],"label-lg":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"0.02em","fontWeight":"500"}],"headline-md":["1.25rem",{"lineHeight":"1.75rem","letterSpacing":"-0.015em","fontWeight":"600"}],"body-md":["0.875rem",{"lineHeight":"1.25rem","fontWeight":"400"}],"headline-xl-mobile":["1.75rem",{"lineHeight":"2.25rem","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.02em","fontWeight":"600"}],"label-sm":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.05em","fontWeight":"500"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen"><aside class="fixed top-0 left-0 bottom-0 w-64 bg-surface-container-lowest border-r border-outline-variant/40 flex flex-col z-50 overflow-y-auto"><div class="p-space-md border-b border-outline-variant/30"><div class="flex items-center gap-space-sm mb-space-xs"><img alt="TrafficIQ Vector Brand Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UH3c-nXkg55CbjB2nzEdYGjKV_CkNP5IKLphe-PIGKpLyQvbwXQ8dsQ_ot_i9xmHtaQSuN_ffyDCgNusUqlF3Dd3hz6KrrK4Ewts3Hvipo5R4aZE-OG7Ei_rb1fKENjvRB5V_AaKPMfDZUJ3gWpNXS_4LQqMBKtDw_gDGsF75FjvL7RxOAQsYZt5AnwLp47DSmugdYLhDSzyRofhCqPB9fHeTpKKzu_w8BgjG-05Io2m5J6GKOPF1BtTsj"/><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight">TrafficIQ</span><span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-high text-primary font-mono">v3.4-PROD</span></div><div class="flex items-center gap-1.5 mt-0.5"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span></span><span class="font-label-sm text-label-sm text-tertiary font-mono tracking-wider uppercase">Telemetry Live</span></div></div></div></div><nav class="flex-1 px-space-sm py-space-md space-y-space-md" data-active-classes="bg-primary-container text-on-primary-container font-semibold shadow-[0_0_12px_rgba(6,182,212,0.35)]"><div class="space-y-1"><span class="px-space-sm font-label-sm text-label-sm text-outline uppercase tracking-wider block mb-1 font-mono">Intelligence Core</span><a aria-current="page" class="flex items-center justify-between px-space-sm py-2 rounded-lg transition-colors bg-primary-container text-on-primary-container font-semibold shadow-[0_0_12px_rgba(6,182,212,0.35)]" data-path="overview" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1.125rem]">grid_view</span><span class="font-body-sm text-body-sm">Overview</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="live-traffic-map" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1.125rem]">location_on</span><span class="font-body-sm text-body-sm">Live Traffic Map</span></div><span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-error-container/30 text-error border border-error/30 font-mono">42 alerts</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="route-planner" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1.125rem]">navigation</span><span class="font-body-sm text-body-sm">Route Planner</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="multi-horizon-forecast" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1.125rem]">trending_up</span><span class="font-body-sm text-body-sm">Multi-Horizon Forecast</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="congestion-heatmap" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1.125rem]">local_fire_department</span><span class="font-body-sm text-body-sm">Congestion Heatmap</span></div></a></div><div class="space-y-1"><span class="px-space-sm font-label-sm text-label-sm text-outline uppercase tracking-wider block mb-1 font-mono">Analytics &amp; Insights</span><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="traffic-analytics" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1.125rem]">bar_chart</span><span class="font-body-sm text-body-sm">Traffic Analytics</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="explainable-ai" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1.125rem]">auto_awesome</span><span class="font-body-sm text-body-sm">Explainable AI (XAI)</span></div><span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-secondary-container/50 text-secondary border border-secondary/30 font-mono">AI</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="incident-intelligence" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1.125rem]">warning</span><span class="font-body-sm text-body-sm">Incident Intelligence</span></div><span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-error/10 text-error border border-error/40 font-mono">3 Active</span></a></div><div class="space-y-1"><span class="px-space-sm font-label-sm text-label-sm text-outline uppercase tracking-wider block mb-1 font-mono">Workspace</span><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="saved-routes" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1.125rem]">bookmark</span><span class="font-body-sm text-body-sm">Saved Routes</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="alert-center" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1.125rem]">notifications</span><span class="font-body-sm text-body-sm">Alert Center</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="ai-assistant" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1.125rem]">terminal</span><span class="font-body-sm text-body-sm">AI Assistant</span></div></a></div><div class="space-y-1"><span class="px-space-sm font-label-sm text-label-sm text-outline uppercase tracking-wider block mb-1 font-mono">System Ops</span><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="ingestion-monitor" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1.125rem]">dns</span><span class="font-body-sm text-body-sm">Admin / Ingestion Monitor</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="account-settings" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1.125rem]">tune</span><span class="font-body-sm text-body-sm">Account Settings</span></div></a></div></nav><div class="p-space-sm border-t border-outline-variant/30 bg-surface-container-low/60 m-space-sm rounded-lg"><div class="flex items-center justify-between mb-1"><span class="font-label-sm text-label-sm uppercase text-outline font-mono">Stream Ingestion</span><span class="font-label-sm text-label-sm text-tertiary font-mono">HEALTHY</span></div><div class="space-y-1 text-on-surface-variant font-label-sm text-label-sm font-mono"><div class="flex justify-between"><span>Kafka:</span><span class="text-on-surface font-semibold">18,420 msg/s</span></div><div class="flex justify-between"><span>Latency:</span><span class="text-tertiary font-semibold">14ms</span></div><div class="flex justify-between"><span>Sync:</span><span class="text-primary font-semibold">4s ago</span></div></div></div></aside><div class="pl-64 flex flex-col min-h-screen"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl border-b border-outline-variant/40 z-40 px-6 flex items-center justify-between gap-4"><div class="flex items-center gap-space-md flex-1 max-w-xl"><div class="flex items-center gap-2 bg-surface-container-low border border-outline-variant/50 rounded-lg px-2.5 py-1.5 cursor-pointer hover:border-primary/50 transition-colors"><span class="material-symbols-outlined text-primary text-[1.125rem]">location_city</span><span class="font-label-sm text-label-sm text-on-surface font-medium whitespace-nowrap">Metro Seattle &amp; Puget Sound</span><span class="material-symbols-outlined text-outline text-[1rem]">expand_more</span></div><div class="relative flex-1"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[1.125rem]">search</span><input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg pl-9 pr-4 py-1.5 font-label-sm text-label-sm text-on-surface placeholder-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/40 font-mono transition-all" placeholder="Search highways, corridors, sensor nodes, or cameras... (Ctrl+K)" type="text"/></div></div><div class="hidden xl:flex items-center gap-3"><div class="flex items-center gap-2 px-2.5 py-1 rounded bg-surface-container-low border border-outline-variant/40 font-label-sm text-label-sm font-mono"><span class="h-2 w-2 rounded-full bg-tertiary animate-pulse"></span><span class="text-on-surface-variant">SENSOR SYNC:</span><span class="text-tertiary font-semibold">4s ago</span></div><div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-low border border-outline-variant/40 font-label-sm text-label-sm font-mono"><span class="text-on-surface-variant">CCI:</span><span class="text-primary font-bold">42.8</span><span class="text-tertiary font-medium">(-3.1%)</span></div><div class="flex items-center bg-surface-container-low border border-outline-variant/40 p-0.5 rounded font-label-sm text-label-sm font-mono"><button class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-semibold">+15m</button><button class="px-2 py-0.5 rounded text-on-surface-variant hover:text-on-surface">+30m</button><button class="px-2 py-0.5 rounded text-on-surface-variant hover:text-on-surface">+60m</button><button class="px-2 py-0.5 rounded text-on-surface-variant hover:text-on-surface">+120m</button></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-1.5 px-2.5 py-1.5 rounded bg-error-container/20 border border-error/40 text-error hover:bg-error-container/30 transition-colors font-label-sm text-label-sm font-mono" title="Broadcast Incident Alert"><span class="material-symbols-outlined text-[1rem]">report</span><span class="hidden 2xl:inline">INCIDENT WARN</span></button><button class="relative p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" title="Notifications"><span class="material-symbols-outlined text-[1.25rem]">notifications</span><span class="absolute top-1 right-1 h-4 w-4 bg-error text-on-error rounded-full font-label-sm text-[0.625rem] flex items-center justify-center font-bold font-mono">3</span></button><div class="h-6 w-px bg-outline-variant/40"></div><div class="flex items-center gap-space-sm pl-1"><div class="text-right hidden lg:block"><div class="font-label-sm text-label-sm text-on-surface font-semibold leading-tight">Dr. Maya Lin</div><div class="font-label-sm text-[0.625rem] text-primary font-mono uppercase tracking-wider">System Operator</div></div><div class="relative flex items-center cursor-pointer"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-primary/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYv4QGzgFnfUEtRap6dUz9K672AOZOCyTbYEV4eTUaiOgxJFuP2z8lVNq2mXU6g225_7_b50mhyXlTvzh39u3PT9cpMY4FRN2HjPMniGqlFNwhi9ADQDrynexthYgXuGneOqg3PQuxF284q1E6M3nwYbEH8ZEpnnLNXU2DF4AzQvPVoReYeOSb-dAOoFrfIw3e_12cfNzuqKa53NB30dBjgj7j22LfClXNX4zDMwhLJ20-WaBI5dR62A"/><span class="material-symbols-outlined text-outline text-[1rem] ml-1">arrow_drop_down</span></div></div></div></header><main class="relative flex-1 w-full pt-16 bg-surface-container-lowest text-on-surface"><div class="flex flex-col w-full">
+<!-- Content Header Area -->
+<div class="px-space-lg py-space-md flex flex-col gap-space-md">
+<!-- Top System Notice & Status Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm bg-surface-container-low px-space-md py-1.5 rounded-lg">
+<div class="flex items-center gap-space-sm text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex h-2 w-2 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="text-primary font-semibold tracking-wider uppercase font-mono">SIMULATED STREAM</span>
+<span class="text-outline">/</span>
+<span class="text-on-surface">Connected to Municipal IoT &amp; Inductive Loop Detector Array (Calibrated Demo Environment)</span>
+</div>
+<div class="flex items-center gap-space-md font-mono font-label-sm text-label-sm text-outline">
+<span>PUGET-NET ID: <span class="text-on-surface font-medium">SEA-CORR-0924</span></span>
+<span>FRAME LOSS: <span class="text-tertiary font-medium">0.00%</span></span>
+</div>
+</div>
+<!-- Title and Interactive Controls -->
+<div class="flex flex-col xl:flex-row xl:items-end justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-mono text-label-sm text-primary uppercase tracking-widest bg-primary/10 px-2 py-0.5 rounded">Telemetry Dispatch Console</span>
+<span class="font-mono text-label-sm text-outline">16:45:12 PST</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight font-bold">Urban Corridor Operations Overview</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">Real-time telemetry, predictive congestion shifts, and corridor anomalies across 1,420 km monitored roadways</p>
+</div>
+<!-- Action & Horizon Controls -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Horizon Segmented Buttons -->
+<div class="flex items-center bg-surface-container-high p-1 rounded-lg font-mono text-label-sm" id="horizon-selector">
+<button class="px-3 py-1.5 rounded bg-primary-container text-on-primary-container font-semibold transition-all shadow-sm" data-horizon="now">Now (Live)</button>
+<button class="px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface transition-all" data-horizon="15">+15 min</button>
+<button class="px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface transition-all" data-horizon="30">+30 min</button>
+<button class="px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface transition-all" data-horizon="60">+60 min</button>
+<button class="px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface transition-all" data-horizon="120">+120 min</button>
+</div>
+<!-- Mode Toggle -->
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-sm text-label-sm font-mono transition-all" id="sandbox-toggle">
+<span class="material-symbols-outlined text-[1.125rem] text-secondary">science</span>
+<span>Simulation Sandbox</span>
+<span class="h-2 w-2 rounded-full bg-secondary ml-0.5"></span>
+</button>
+<!-- Export Briefing -->
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-sm text-label-sm font-mono transition-all">
+<span class="material-symbols-outlined text-[1.125rem] text-primary">ios_share</span>
+<span>Export Briefing</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 4-Column KPI Grid -->
+<div class="px-space-lg pb-space-md grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- KPI 1: CCI -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between shadow-md relative overflow-hidden group hover:bg-surface-container transition-all">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-mono text-label-sm uppercase tracking-wider text-outline block">Citywide Congestion Index</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-mono text-3xl font-bold text-on-surface tracking-tight">41.8%</span>
+<span class="font-mono text-label-sm px-2 py-0.5 rounded bg-amber-500/10 text-amber-300 font-semibold">Moderate Flow</span>
+</div>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-high text-primary">
+<span class="material-symbols-outlined text-[1.25rem]">speed</span>
+</div>
+</div>
+<!-- Sparkline Inline SVG -->
+<div class="my-3 flex items-center justify-between gap-2">
+<svg class="w-full h-8 overflow-visible" fill="none" viewbox="0 0 160 30">
+<path class="text-primary" d="M0 24 L20 22 L40 25 L60 18 L80 16 L100 20 L120 12 L140 14 L160 10" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+<path class="text-primary/10" d="M0 24 L20 22 L40 25 L60 18 L80 16 L100 20 L120 12 L140 14 L160 10 L160 30 L0 30 Z" fill="currentColor"></path>
+<circle class="text-primary animate-ping" cx="160" cy="10" fill="currentColor" opacity="0.6" r="3"></circle>
+<circle class="text-primary" cx="160" cy="10" fill="currentColor" r="2.5"></circle>
+</svg>
+</div>
+<div class="flex items-center justify-between font-mono text-label-sm text-outline pt-2 border-t border-surface-container-high/60">
+<span class="text-tertiary">-4.2% vs yesterday peak</span>
+<span class="text-amber-400 font-medium">+2.1% in 30m</span>
+</div>
+</div>
+<!-- KPI 2: Average Speed -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between shadow-md group hover:bg-surface-container transition-all">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-mono text-label-sm uppercase tracking-wider text-outline block">Monitored Average Speed</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-mono text-3xl font-bold text-on-surface tracking-tight">48.4 <span class="text-base text-outline font-normal">mph</span></span>
+<span class="font-mono text-label-sm text-outline">Target 65</span>
+</div>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-high text-tertiary">
+<span class="material-symbols-outlined text-[1.25rem]">navigation</span>
+</div>
+</div>
+<div class="my-2 space-y-1">
+<div class="flex justify-between font-mono text-label-sm">
+<span class="text-on-surface-variant">Freeways (Avg):</span>
+<span class="text-on-surface font-semibold">56.0 mph</span>
+</div>
+<div class="flex justify-between font-mono text-label-sm">
+<span class="text-on-surface-variant">Arterials (Avg):</span>
+<span class="text-on-surface font-semibold">31.2 mph</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 font-mono text-label-sm text-tertiary pt-2 border-t border-surface-container-high/60">
+<span class="material-symbols-outlined text-[1rem]">trending_up</span>
+<span>+3.8 mph via dynamic signals</span>
+</div>
+</div>
+<!-- KPI 3: Active Incidents -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between shadow-md group hover:bg-surface-container transition-all">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-mono text-label-sm uppercase tracking-wider text-outline block">Active Chokepoints</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-mono text-3xl font-bold text-error tracking-tight">14</span>
+<span class="font-mono text-label-sm text-on-surface-variant">Recorded</span>
+</div>
+</div>
+<div class="p-2 rounded-lg bg-error-container/20 text-error">
+<span class="material-symbols-outlined text-[1.25rem]">warning</span>
+</div>
+</div>
+<div class="my-2 flex items-center gap-1 font-mono text-label-sm">
+<span class="px-2 py-0.5 rounded bg-error/20 text-error font-bold">2 Critical</span>
+<span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-300">5 Mod</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">7 Minor</span>
+</div>
+<div class="font-mono text-label-sm text-error truncate pt-2 border-t border-surface-container-high/60" title="I-5 NB MP 168 (Spill, 2 lanes closed, +24m delay)">
+<span class="font-bold">CRIT:</span> I-5 NB MP 168 (+24m)
+      </div>
+</div>
+<!-- KPI 4: AI Reliability Score -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between shadow-md group hover:bg-surface-container transition-all">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-mono text-label-sm uppercase tracking-wider text-outline block">AI Forecast Reliability</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-mono text-3xl font-bold text-secondary tracking-tight">94.6%</span>
+<span class="font-mono text-label-sm text-tertiary">ST-GCN v4.2</span>
+</div>
+</div>
+<div class="p-2 rounded-lg bg-secondary-container/30 text-secondary">
+<span class="material-symbols-outlined text-[1.25rem]">psychology</span>
+</div>
+</div>
+<div class="my-2 flex items-center justify-between font-mono text-label-sm text-on-surface-variant">
+<span>MAE: <span class="text-on-surface font-semibold">2.1 mph</span></span>
+<span>Telemetry: <span class="text-on-surface font-semibold">1.2M pts/m</span></span>
+</div>
+<div class="flex items-center justify-between font-mono text-label-sm text-outline pt-2 border-t border-surface-container-high/60">
+<span>Transformer Ensemble</span>
+<span class="text-primary flex items-center gap-1">
+<span class="h-1.5 w-1.5 rounded-full bg-primary animate-pulse"></span> Optimal
+        </span>
+</div>
+</div>
+</div>
+<!-- Primary Split Layout: 8 cols left, 4 cols right -->
+<div class="px-space-lg pb-space-lg grid grid-cols-1 xl:grid-cols-12 gap-space-md">
+<!-- LEFT COLUMN (8 Columns) -->
+<div class="xl:col-span-8 flex flex-col gap-space-md">
+<!-- SECTION 1: Congestion Trajectory Multi-Horizon Chart Panel -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col">
+<!-- Panel Title & Meta -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pb-space-md border-b border-surface-container-high/70">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[1.25rem]">stacked_line_chart</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Real-Time vs Multi-Horizon Congestion Trajectory</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Corridor-wide velocity dynamics with 90% ML bayesian confidence bounds</p>
+</div>
+<!-- Chart Legend -->
+<div class="flex items-center gap-space-md font-mono text-label-sm">
+<div class="flex items-center gap-1.5">
+<span class="h-0.5 w-4 bg-outline"></span>
+<span class="text-outline">24h Baseline</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="h-1 w-4 bg-primary rounded-full"></span>
+<span class="text-primary font-semibold">Observed</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="h-1 w-4 bg-secondary border-b border-dashed border-secondary"></span>
+<span class="text-secondary font-semibold">AI Horizon (+120m)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="h-3 w-3 bg-secondary/15 rounded"></span>
+<span class="text-secondary/70">Confidence Band</span>
+</div>
+</div>
+</div>
+<!-- Interactive SVG Chart Canvas -->
+<div class="relative w-full h-72 mt-4 select-none">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 800 240">
+<defs>
+<!-- Confidence Band Gradient -->
+<lineargradient id="bandGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#d0bcff" stop-opacity="0.25"></stop>
+<stop offset="100%" stop-color="#d0bcff" stop-opacity="0.02"></stop>
+</lineargradient>
+<lineargradient id="observedGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#4cd7f6" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#4cd7f6" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Grid Lines Horizontal -->
+<line class="text-surface-container-high/40" stroke="currentColor" stroke-dasharray="3 3" stroke-width="1" x1="40" x2="780" y1="40" y2="40"></line>
+<text class="text-outline font-mono text-[10px]" fill="currentColor" text-anchor="end" x="30" y="44">65 mph</text>
+<line class="text-surface-container-high/40" stroke="currentColor" stroke-dasharray="3 3" stroke-width="1" x1="40" x2="780" y1="95" y2="95"></line>
+<text class="text-outline font-mono text-[10px]" fill="currentColor" text-anchor="end" x="30" y="99">50 mph</text>
+<line class="text-surface-container-high/40" stroke="currentColor" stroke-dasharray="3 3" stroke-width="1" x1="40" x2="780" y1="150" y2="150"></line>
+<text class="text-outline font-mono text-[10px]" fill="currentColor" text-anchor="end" x="30" y="154">35 mph</text>
+<line class="text-surface-container-high/40" stroke="currentColor" stroke-width="1" x1="40" x2="780" y1="205" y2="205"></line>
+<text class="text-outline font-mono text-[10px]" fill="currentColor" text-anchor="end" x="30" y="209">20 mph</text>
+<!-- Peak Shaded Regions -->
+<!-- Morning Peak (07:30 - 09:15) approx X: 160 to 220 -->
+<rect class="text-amber-500/5" fill="currentColor" height="175" width="65" x="160" y="30"></rect>
+<text class="text-amber-400 font-mono text-[9px] uppercase tracking-wider" fill="currentColor" text-anchor="middle" x="192" y="38">AM Peak (07:30-09:15)</text>
+<!-- Evening Peak Projected (17:15 - 18:45) approx X: 540 to 650 -->
+<rect class="text-error/5" fill="currentColor" height="175" width="115" x="540" y="30"></rect>
+<text class="text-error font-mono text-[9px] uppercase tracking-wider" fill="currentColor" text-anchor="middle" x="597" y="38">Projected PM Peak (17:15-18:45)</text>
+<!-- Vertical Current Time Line: X = 515 (16:45) -->
+<line class="text-primary" stroke="currentColor" stroke-dasharray="4 2" stroke-width="1.5" x1="515" x2="515" y1="25" y2="210"></line>
+<circle class="animate-pulse" cx="515" cy="115" fill="#4cd7f6" r="4.5"></circle>
+<rect fill="#0f131c" height="16" rx="2" stroke="#4cd7f6" stroke-width="0.8" width="80" x="475" y="12"></rect>
+<text class="font-mono text-[9px] font-bold" fill="#4cd7f6" text-anchor="middle" x="515" y="23">NOW 16:45 (48.4)</text>
+<!-- 24-Hour Historical Baseline (Grey line across 24h) -->
+<path class="text-outline" d="M 40 60 Q 100 62, 150 85 T 190 145 T 240 100 T 320 75 T 420 80 T 515 110 T 590 165 T 670 120 T 780 65" fill="none" opacity="0.6" stroke="currentColor" stroke-width="1.5"></path>
+<!-- Translucent Confidence Envelope for Future (from X: 515 to X: 780) -->
+<!-- Upper bound and lower bound -->
+<path d="M 515 115 
+                     C 550 120, 580 140, 610 155 
+                     C 645 170, 680 135, 720 110 
+                     C 750 95, 765 85, 780 80
+                     L 780 135
+                     C 765 145, 750 155, 720 165
+                     C 680 185, 645 200, 610 195
+                     C 580 185, 550 145, 515 115 Z" fill="url(#bandGrad)"></path>
+<!-- Upper and Lower dashed boundary strokes -->
+<path d="M 515 115 C 550 120, 580 140, 610 155 C 645 170, 680 135, 720 110 C 750 95, 765 85, 780 80" fill="none" opacity="0.5" stroke="#d0bcff" stroke-dasharray="2 2" stroke-width="1"></path>
+<path d="M 515 115 C 550 145, 580 185, 610 195 C 645 200, 680 185, 720 165 C 750 155, 765 145, 780 135" fill="none" opacity="0.5" stroke="#d0bcff" stroke-dasharray="2 2" stroke-width="1"></path>
+<!-- Observed Speed Curve (History up to Now at X: 515) -->
+<path d="M 40 58 Q 95 60, 145 92 T 188 152 T 235 98 T 315 72 T 415 78 T 480 94 L 515 115" fill="none" stroke="#4cd7f6" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Predicted Median Trajectory (from X: 515 onward) -->
+<path d="M 515 115 C 550 132, 580 162, 610 178 C 645 188, 680 155, 720 135 C 750 120, 765 105, 780 102" fill="none" stroke="#d0bcff" stroke-dasharray="4 3" stroke-linecap="round" stroke-width="2.2"></path>
+<!-- Horizon Dots: +15m (X:545), +30m (X:575), +60m (X:635) -->
+<circle cx="550" cy="132" fill="#d0bcff" r="3"></circle>
+<text class="font-mono text-[8px]" fill="#d0bcff" text-anchor="middle" x="550" y="145">+15m</text>
+<circle cx="585" cy="166" fill="#facc15" r="3.5"></circle>
+<text class="font-mono text-[8px] font-bold" fill="#facc15" text-anchor="middle" x="585" y="180">+30m (Surge)</text>
+<circle cx="635" cy="186" fill="#ffb4ab" r="3"></circle>
+<text class="font-mono text-[8px]" fill="#ffb4ab" text-anchor="middle" x="635" y="200">+60m (Trough)</text>
+</svg>
+<!-- Timeline X-Axis Labels -->
+<div class="flex justify-between font-mono text-[11px] text-outline px-8 mt-1 border-t border-surface-container-high/40 pt-1">
+<span>00:00</span>
+<span>04:00</span>
+<span class="text-amber-400 font-semibold">08:00 AM</span>
+<span>12:00</span>
+<span class="text-primary font-bold">16:45 (Now)</span>
+<span class="text-error font-semibold">18:00 PM</span>
+<span>20:00</span>
+<span>23:59</span>
+</div>
+</div>
+<!-- Telemetry Bottom Bar for Chart -->
+<div class="mt-4 pt-3 border-t border-surface-container-high flex flex-wrap items-center justify-between gap-space-sm font-mono text-label-sm">
+<div class="flex items-center gap-space-md text-on-surface-variant">
+<span>Sensor Influx: <span class="text-on-surface font-semibold">14,200 detectors</span></span>
+<span>Prediction Confidence: <span class="text-secondary font-semibold">91.4% (p&lt;0.01)</span></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-outline">Algorithm:</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface text-label-sm">ST-GCN-SpatialNet</span>
+</div>
+</div>
+</div>
+<!-- SECTION 2: Major Corridor Health Matrix Table -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col">
+<div class="flex flex-wrap items-center justify-between gap-space-sm mb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[1.25rem]">grid_on</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Major Corridor Health Matrix</h2>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-mono text-label-sm text-outline">Sorted by Delay Impact</span>
+<button class="p-1 rounded bg-surface-container-high hover:bg-surface-variant text-on-surface-variant">
+<span class="material-symbols-outlined text-[1rem]">filter_list</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-mono text-label-sm">
+<thead>
+<tr class="text-outline border-b border-surface-container-high uppercase tracking-wider text-[11px]">
+<th class="pb-2.5 font-medium">Corridor Name</th>
+<th class="pb-2.5 font-medium">Segment</th>
+<th class="pb-2.5 font-medium">Current Speed</th>
+<th class="pb-2.5 font-medium">Hist Baseline</th>
+<th class="pb-2.5 font-medium">Pred. Delay (+30m)</th>
+<th class="pb-2.5 font-medium">Status</th>
+<th class="pb-2.5 font-medium text-right">Dynamic Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high/60">
+<!-- Row 1: I-5 Express Lanes -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-3 font-body-md font-semibold text-on-surface flex items-center gap-2">
+<span class="h-2 w-2 rounded-full bg-error"></span>
+<span>I-5 Express Lanes</span>
+</td>
+<td class="py-3 text-on-surface-variant">14.2 km</td>
+<td class="py-3 text-error font-bold">21 mph</td>
+<td class="py-3 text-outline">58 mph</td>
+<td class="py-3 text-error font-bold">+18.5 min</td>
+<td class="py-3">
+<span class="px-2 py-0.5 rounded bg-error/15 text-error font-semibold">Severe</span>
+</td>
+<td class="py-3 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high text-primary font-medium border border-primary/20">
+<span class="material-symbols-outlined text-[0.875rem]">alt_route</span>
+                    Ramp Metering Active
+                  </span>
+</td>
+</tr>
+<!-- Row 2: SR-520 Floating Bridge -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-3 font-body-md font-semibold text-on-surface flex items-center gap-2">
+<span class="h-2 w-2 rounded-full bg-amber-400"></span>
+<span>SR-520 Floating Bridge</span>
+</td>
+<td class="py-3 text-on-surface-variant">12.8 km</td>
+<td class="py-3 text-amber-300 font-bold">42 mph</td>
+<td class="py-3 text-outline">50 mph</td>
+<td class="py-3 text-amber-400 font-bold">+4.0 min</td>
+<td class="py-3">
+<span class="px-2 py-0.5 rounded bg-amber-500/15 text-amber-300 font-semibold">Moderate</span>
+</td>
+<td class="py-3 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined text-[0.875rem]">speed</span>
+                    Harmonization -10mph
+                  </span>
+</td>
+</tr>
+<!-- Row 3: I-405 Tech Corridor -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-3 font-body-md font-semibold text-on-surface flex items-center gap-2">
+<span class="h-2 w-2 rounded-full bg-amber-500"></span>
+<span>I-405 Tech Corridor</span>
+</td>
+<td class="py-3 text-on-surface-variant">26.4 km</td>
+<td class="py-3 text-amber-400 font-bold">34 mph</td>
+<td class="py-3 text-outline">55 mph</td>
+<td class="py-3 text-amber-400 font-bold">+9.2 min</td>
+<td class="py-3">
+<span class="px-2 py-0.5 rounded bg-amber-500/15 text-amber-400 font-semibold">Heavy</span>
+</td>
+<td class="py-3 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high text-secondary">
+<span class="material-symbols-outlined text-[0.875rem]">toll</span>
+                    Dynamic Toll: $5.25
+                  </span>
+</td>
+</tr>
+<!-- Row 4: Mercer Street Arterial -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-3 font-body-md font-semibold text-on-surface flex items-center gap-2">
+<span class="h-2 w-2 rounded-full bg-error"></span>
+<span>Mercer Street Arterial</span>
+</td>
+<td class="py-3 text-on-surface-variant">3.1 km</td>
+<td class="py-3 text-error font-bold">12 mph</td>
+<td class="py-3 text-outline">28 mph</td>
+<td class="py-3 text-error font-bold">+14.0 min</td>
+<td class="py-3">
+<span class="px-2 py-0.5 rounded bg-error/15 text-error font-semibold">Severe</span>
+</td>
+<td class="py-3 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high text-error">
+<span class="material-symbols-outlined text-[0.875rem]">notification_important</span>
+                    Route Advisory Dispatched
+                  </span>
+</td>
+</tr>
+<!-- Row 5: Aurora Ave N (SR-99) -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-3 font-body-md font-semibold text-on-surface flex items-center gap-2">
+<span class="h-2 w-2 rounded-full bg-tertiary"></span>
+<span>Aurora Ave N (SR-99)</span>
+</td>
+<td class="py-3 text-on-surface-variant">18.6 km</td>
+<td class="py-3 text-tertiary font-bold">44 mph</td>
+<td class="py-3 text-outline">45 mph</td>
+<td class="py-3 text-tertiary font-bold">+0.5 min</td>
+<td class="py-3">
+<span class="px-2 py-0.5 rounded bg-tertiary/15 text-tertiary font-semibold">Free Flow</span>
+</td>
+<td class="py-3 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined text-[0.875rem]">check_circle</span>
+                    Normal Operation
+                  </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN (4 Columns) -->
+<div class="xl:col-span-4 flex flex-col gap-space-md">
+<!-- CARD 1: Priority Saved Routes Quick Watch -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col">
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container-high">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[1.25rem]">bookmark</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Priority Saved Routes</h3>
+</div>
+<span class="font-mono text-label-sm text-outline">3 Monitored</span>
+</div>
+<div class="mt-space-sm space-y-space-sm">
+<!-- Route 1 -->
+<div class="p-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Bellevue → Seattle Downtown</span>
+<span class="font-mono text-[11px] text-outline block">Via SR-520 Bridge</span>
+</div>
+<div class="text-right">
+<span class="font-mono text-base font-bold text-amber-300">22 min</span>
+<span class="font-mono text-[10px] text-amber-400 block">+4m delay</span>
+</div>
+</div>
+<div class="mt-2 flex items-center gap-1.5 font-mono text-[11px] text-amber-300/90 bg-amber-500/10 px-2 py-1 rounded">
+<span class="material-symbols-outlined text-[0.875rem]">timer</span>
+<span>Depart before 17:10 to avoid +18m surge</span>
+</div>
+</div>
+<!-- Route 2 -->
+<div class="p-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">SeaTac Freight → Terminal 18</span>
+<span class="font-mono text-[11px] text-outline block">Via I-5 Northbound</span>
+</div>
+<div class="text-right">
+<span class="font-mono text-base font-bold text-error">38 min</span>
+<span class="font-mono text-[10px] text-error block">+19m delay</span>
+</div>
+</div>
+<div class="mt-2 flex items-center gap-1.5 font-mono text-[11px] text-primary bg-primary/10 px-2 py-1 rounded">
+<span class="material-symbols-outlined text-[0.875rem]">alt_route</span>
+<span>AI Detour: Marginal Way S (saves 14m)</span>
+</div>
+</div>
+<!-- Route 3 -->
+<div class="p-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">U-District → Capitol Hill</span>
+<span class="font-mono text-[11px] text-outline block">University Shuttle Corridor</span>
+</div>
+<div class="text-right">
+<span class="font-mono text-base font-bold text-tertiary">15 min</span>
+<span class="font-mono text-[10px] text-tertiary block">Free Flow</span>
+</div>
+</div>
+<div class="mt-2 flex items-center gap-1.5 font-mono text-[11px] text-tertiary bg-tertiary/10 px-2 py-1 rounded">
+<span class="material-symbols-outlined text-[0.875rem]">check_circle</span>
+<span>Operating at nominal travel schedule</span>
+</div>
+</div>
+</div>
+</div>
+<!-- CARD 2: Live Incident Feed & Dispatch Alerts -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col">
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container-high">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error text-[1.25rem]">e911_emergency</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Live Incident Stream</h3>
+</div>
+<span class="font-mono text-label-sm px-2 py-0.5 rounded bg-error/20 text-error font-bold">2m ago</span>
+</div>
+<div class="mt-space-sm space-y-3 font-mono text-label-sm">
+<!-- Incident 1 -->
+<div class="p-2.5 rounded-lg bg-error-container/10 border-l-2 border-error">
+<div class="flex items-center justify-between text-error font-bold">
+<span>CRITICAL COLLISION</span>
+<span class="text-[10px]">MP 165A</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-1">Multi-vehicle collision with overturned trailer on I-5 NB at Exit 165A.</p>
+<div class="mt-2 flex items-center justify-between text-[11px] text-on-surface-variant">
+<span class="text-error">3.4 mi backup • 2 lanes blocked</span>
+<span class="text-tertiary font-semibold">Units on scene</span>
+</div>
+</div>
+<!-- Incident 2 -->
+<div class="p-2.5 rounded-lg bg-surface-container border-l-2 border-amber-400">
+<div class="flex items-center justify-between text-amber-300 font-bold">
+<span>INFRASTRUCTURE WORK</span>
+<span class="text-[10px]">I-90 EB</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-1">Emergency pothole repair mid-span. 1 right lane closed.</p>
+<div class="mt-2 flex items-center justify-between text-[11px] text-on-surface-variant">
+<span>Travel delay: +9 mins</span>
+<span class="text-outline">Est clear: 17:30</span>
+</div>
+</div>
+<!-- Incident 3 -->
+<div class="p-2.5 rounded-lg bg-surface-container border-l-2 border-secondary">
+<div class="flex items-center justify-between text-secondary font-bold">
+<span>SPECIAL EVENT ADVISORY</span>
+<span class="text-[10px]">Climate Pledge</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-1">High-capacity evening arena event. Congestion surge projected at 18:30 (+35% volume).</p>
+<div class="mt-2 text-[11px] text-on-surface-variant">
+<span>Impact: Mercer, Denny, and 5th Ave</span>
+</div>
+</div>
+</div>
+</div>
+<!-- CARD 3: AI Predictive Dispatch Summary -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 pb-space-sm border-b border-surface-container-high">
+<span class="material-symbols-outlined text-secondary text-[1.25rem]">auto_awesome</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">AI Predictive Dispatch</h3>
+</div>
+<div class="mt-3 p-3 rounded-lg bg-secondary-container/20">
+<div class="flex items-center justify-between font-mono text-label-sm mb-1">
+<span class="text-secondary font-bold uppercase tracking-wider">Spillover Alert</span>
+<span class="px-2 py-0.5 rounded bg-secondary text-on-secondary font-bold">82% Probability</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">
+              Spillover from I-5 onto Eastlake Ave is likely within <strong>20 minutes</strong> due to Exit 165 blockage.
+            </p>
+<div class="mt-2.5 pt-2 border-t border-secondary/20 font-mono text-[11px] text-on-secondary-container">
+              Recommended action: Extend green phase on <strong>Stewart &amp; Denny Way</strong> signals by +18 seconds.
+            </div>
+</div>
+</div>
+<div class="mt-4 flex items-center gap-2">
+<button class="flex-1 py-2 rounded-lg bg-primary text-on-primary font-headline-sm text-headline-sm font-semibold hover:bg-primary-container transition-all text-center">
+            Review Signal Plan
+          </button>
+<button class="px-3 py-2 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-mono text-label-sm transition-all" title="Dismiss suggestion">
+            Dismiss
+          </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple interactive horizon toggling
+  const horizonButtons = document.querySelectorAll('#horizon-selector button');
+  horizonButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      horizonButtons.forEach(b => {
+        b.className = 'px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface transition-all';
+      });
+      btn.className = 'px-3 py-1.5 rounded bg-primary-container text-on-primary-container font-semibold transition-all shadow-sm';
+    });
+  });
+
+  // Sandbox Mode interactive toggle
+  const sandboxBtn = document.getElementById('sandbox-toggle');
+  let sandboxActive = false;
+  sandboxBtn.addEventListener('click', () => {
+    sandboxActive = !sandboxActive;
+    if (sandboxActive) {
+      sandboxBtn.classList.add('bg-secondary-container/50', 'text-secondary');
+      sandboxBtn.querySelector('.material-symbols-outlined').innerText = 'check_circle';
+    } else {
+      sandboxBtn.classList.remove('bg-secondary-container/50', 'text-secondary');
+      sandboxBtn.querySelector('.material-symbols-outlined').innerText = 'science';
+    }
+  });
+</script></main></div></body></html>

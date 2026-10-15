@@ -1,0 +1,35 @@
+# Compiled Java classes and target directory
+**/target/
+*.class
+
+# Large Raw Datasets (Users can download using scripts/download_dataset.py)
+ml/data/raw/*.h5
+ml/data/raw/*.tar.gz
+ml/data/raw/*.zip
+ml/data/processed/*.npz
+ml/data/raw_test/
+
+# Python Cache & Virtual Environments
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+env/
+venv/
+.venv/
+
+# Environment Variables & Secrets
+.env
+.env.local
+
+# IDE & Editor Folders
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+# Operating System Files
+.DS_Store
+Thumbs.db

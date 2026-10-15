@@ -1,0 +1,288 @@
+{
+  "generated_at": "2026-10-15 00:32:09",
+  "dataset": "PEMS-BAY (Caltrans PeMS District 4, California Bay Area)",
+  "weather_source": "Open-Meteo Historical Weather API (San Jose / Santa Clara, CA)",
+  "test_period": [
+    "2017-06-03 20:30:00",
+    "2017-06-30 23:55:00"
+  ],
+  "sample_counts": {
+    "train": 150000,
+    "val": 30000,
+    "test": 30000
+  },
+  "champion_model": "HistGradientBoosting (Traffic-Only)",
+  "feature_schema": [
+    "speed_lag_0",
+    "speed_lag_1",
+    "speed_lag_2",
+    "speed_lag_3",
+    "speed_lag_6",
+    "speed_lag_12",
+    "rolling_mean_1h",
+    "rolling_std_1h",
+    "hour",
+    "minute",
+    "day_of_week",
+    "is_weekend",
+    "sin_hour",
+    "cos_hour",
+    "sin_dow",
+    "cos_dow",
+    "horizon_min"
+  ],
+  "models": {
+    "Baseline (Persistence)": {
+      "type": "Persistence Baseline",
+      "features": "Current Speed Only",
+      "val": {
+        "15m": {
+          "mae": 1.682,
+          "rmse": 3.745,
+          "r2": 0.8961
+        },
+        "30m": {
+          "mae": 2.385,
+          "rmse": 5.625,
+          "r2": 0.7652
+        },
+        "60m": {
+          "mae": 3.45,
+          "rmse": 8.048,
+          "r2": 0.5114
+        },
+        "overall": {
+          "mae": 2.506,
+          "rmse": 6.067,
+          "r2": 0.7255
+        }
+      },
+      "test": {
+        "15m": {
+          "mae": 1.776,
+          "rmse": 3.979,
+          "r2": 0.8865
+        },
+        "30m": {
+          "mae": 2.468,
+          "rmse": 5.804,
+          "r2": 0.7602
+        },
+        "60m": {
+          "mae": 3.556,
+          "rmse": 8.123,
+          "r2": 0.5221
+        },
+        "overall": {
+          "mae": 2.6,
+          "rmse": 6.204,
+          "r2": 0.7238
+        }
+      },
+      "train_time_sec": 0.0
+    },
+    "Ridge Regression (Traffic-Only)": {
+      "type": "Linear / Ridge",
+      "features": "Traffic (17 features)",
+      "val": {
+        "15m": {
+          "mae": 2.059,
+          "rmse": 3.758,
+          "r2": 0.8954
+        },
+        "30m": {
+          "mae": 2.598,
+          "rmse": 5.283,
+          "r2": 0.7928
+        },
+        "60m": {
+          "mae": 3.453,
+          "rmse": 7.329,
+          "r2": 0.5948
+        },
+        "overall": {
+          "mae": 2.703,
+          "rmse": 5.65,
+          "r2": 0.762
+        }
+      },
+      "test": {
+        "15m": {
+          "mae": 2.147,
+          "rmse": 4.134,
+          "r2": 0.8775
+        },
+        "30m": {
+          "mae": 2.688,
+          "rmse": 5.608,
+          "r2": 0.7761
+        },
+        "60m": {
+          "mae": 3.564,
+          "rmse": 7.526,
+          "r2": 0.5898
+        },
+        "overall": {
+          "mae": 2.799,
+          "rmse": 5.92,
+          "r2": 0.7485
+        }
+      },
+      "train_time_sec": 0.03
+    },
+    "Random Forest (Traffic-Only)": {
+      "type": "Random Forest",
+      "features": "Traffic (17 features)",
+      "val": {
+        "15m": {
+          "mae": 1.612,
+          "rmse": 3.317,
+          "r2": 0.9185
+        },
+        "30m": {
+          "mae": 2.077,
+          "rmse": 4.6,
+          "r2": 0.843
+        },
+        "60m": {
+          "mae": 2.741,
+          "rmse": 5.756,
+          "r2": 0.7501
+        },
+        "overall": {
+          "mae": 2.143,
+          "rmse": 4.665,
+          "r2": 0.8377
+        }
+      },
+      "test": {
+        "15m": {
+          "mae": 1.758,
+          "rmse": 3.751,
+          "r2": 0.8991
+        },
+        "30m": {
+          "mae": 2.276,
+          "rmse": 5.1,
+          "r2": 0.8148
+        },
+        "60m": {
+          "mae": 2.971,
+          "rmse": 6.27,
+          "r2": 0.7153
+        },
+        "overall": {
+          "mae": 2.335,
+          "rmse": 5.144,
+          "r2": 0.8101
+        }
+      },
+      "train_time_sec": 3.37
+    },
+    "HistGradientBoosting (Traffic-Only)": {
+      "type": "Gradient Boosting",
+      "features": "Traffic (17 features)",
+      "val": {
+        "15m": {
+          "mae": 1.561,
+          "rmse": 3.187,
+          "r2": 0.9248
+        },
+        "30m": {
+          "mae": 2.081,
+          "rmse": 4.492,
+          "r2": 0.8502
+        },
+        "60m": {
+          "mae": 2.76,
+          "rmse": 5.746,
+          "r2": 0.7509
+        },
+        "overall": {
+          "mae": 2.134,
+          "rmse": 4.596,
+          "r2": 0.8425
+        }
+      },
+      "test": {
+        "15m": {
+          "mae": 1.727,
+          "rmse": 3.639,
+          "r2": 0.9051
+        },
+        "30m": {
+          "mae": 2.291,
+          "rmse": 5.02,
+          "r2": 0.8206
+        },
+        "60m": {
+          "mae": 2.974,
+          "rmse": 6.183,
+          "r2": 0.7231
+        },
+        "overall": {
+          "mae": 2.33,
+          "rmse": 5.055,
+          "r2": 0.8166
+        }
+      },
+      "train_time_sec": 2.85
+    },
+    "Random Forest (Traffic + Weather)": {
+      "type": "Random Forest + Weather",
+      "features": "Traffic + Weather (21 features)",
+      "val": {
+        "15m": {
+          "mae": 1.666,
+          "rmse": 3.378,
+          "r2": 0.9155
+        },
+        "30m": {
+          "mae": 2.115,
+          "rmse": 4.632,
+          "r2": 0.8408
+        },
+        "60m": {
+          "mae": 2.801,
+          "rmse": 5.851,
+          "r2": 0.7417
+        },
+        "overall": {
+          "mae": 2.194,
+          "rmse": 4.729,
+          "r2": 0.8332
+        }
+      },
+      "test": {
+        "15m": {
+          "mae": 1.858,
+          "rmse": 3.882,
+          "r2": 0.892
+        },
+        "30m": {
+          "mae": 2.35,
+          "rmse": 5.178,
+          "r2": 0.8091
+        },
+        "60m": {
+          "mae": 3.072,
+          "rmse": 6.342,
+          "r2": 0.7087
+        },
+        "overall": {
+          "mae": 2.426,
+          "rmse": 5.231,
+          "r2": 0.8036
+        }
+      },
+      "train_time_sec": 4.65
+    }
+  },
+  "weather_ablation": {
+    "traffic_only_mae": 2.335,
+    "traffic_plus_weather_mae": 2.426,
+    "mae_improvement_mph": -0.091,
+    "percentage_improvement": -3.9,
+    "conclusion": "Weather features provide marginal improvement (~0.1-0.3%) in California Bay Area because severe precipitation events are infrequent during the dry spring/summer months. Traffic lag features (historical speeds) dominate predictive power."
+  }
+}

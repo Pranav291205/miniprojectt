@@ -1,0 +1,77 @@
+{
+  "dataset": "PEMS-BAY",
+  "region": "California Bay Area",
+  "sample_interval": "5 min",
+  "traffic_features": [
+    "speed_lag_0",
+    "speed_lag_1",
+    "speed_lag_2",
+    "speed_lag_3",
+    "speed_lag_6",
+    "speed_lag_12",
+    "rolling_mean_1h",
+    "rolling_std_1h",
+    "hour",
+    "minute",
+    "day_of_week",
+    "is_weekend",
+    "sin_hour",
+    "cos_hour",
+    "sin_dow",
+    "cos_dow",
+    "horizon_min"
+  ],
+  "weather_features": [
+    "temperature_2m",
+    "relative_humidity_2m",
+    "precipitation",
+    "wind_speed_10m"
+  ],
+  "combined_features": [
+    "speed_lag_0",
+    "speed_lag_1",
+    "speed_lag_2",
+    "speed_lag_3",
+    "speed_lag_6",
+    "speed_lag_12",
+    "rolling_mean_1h",
+    "rolling_std_1h",
+    "hour",
+    "minute",
+    "day_of_week",
+    "is_weekend",
+    "sin_hour",
+    "cos_hour",
+    "sin_dow",
+    "cos_dow",
+    "horizon_min",
+    "temperature_2m",
+    "relative_humidity_2m",
+    "precipitation",
+    "wind_speed_10m"
+  ],
+  "horizons_minutes": [
+    15,
+    30,
+    60
+  ],
+  "date_ranges": {
+    "train": [
+      "2017-01-01 00:00:00",
+      "2017-05-07 17:00:00"
+    ],
+    "validation": [
+      "2017-05-07 17:05:00",
+      "2017-06-03 20:25:00"
+    ],
+    "test": [
+      "2017-06-03 20:30:00",
+      "2017-06-30 23:55:00"
+    ]
+  },
+  "sample_counts": {
+    "train": 729420,
+    "validation": 156300,
+    "test": 156220
+  }
+}
