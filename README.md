@@ -172,3 +172,5 @@ To connect to a persistent local or remote **MySQL 8** server:
 - **Inference Mode:** The machine learning model was genuinely trained on PEMS-BAY observations with a strict chronological split, exported to ONNX, and is executed natively inside Spring Boot via Java ONNX Runtime.
 - **Routing:** Route geometry is computed using OpenStreetMap / OSRM demo endpoints with fallback to local corridor modeling.
 - **Incidents:** Incidents are seeded as clearly labeled **Demo Incidents** to demonstrate filtering, alerting, and incident registration workflows.
+#   m i n i p r o j e c t t  
+ 
