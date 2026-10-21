@@ -76,7 +76,7 @@ The visual design was audited against Google Stitch UI specifications in `design
    - Live sensor sync badge (`4s ago` with animated pulse dot).
    - Citywide Congestion Index (`41.8%`, `-3.1%`).
    - Quick Horizon buttons (`+15m`, `+30m`, `+60m`, `+120m`).
-   - Operator credentials (Dr. Maya Lin, System Operator).
+   - Operator credentials (Mini Project, System Operator).
 2. **Dashboard Overview (Design A):**
    - 4-column KPI cards: Citywide Congestion Index (with sparkline), Monitored Average Speed (48.4 mph), Active Chokepoints (14 recorded), AI Forecast Reliability (94.6%).
    - Multi-Horizon Congestion Trajectory Chart with 24h baseline, observed telemetry, AI forecast curve, and 90% Bayesian confidence envelope.
