@@ -160,23 +160,50 @@ html, body {
   color: #003640 !important;
 }
 
+/* Critical utility overrides */
+.hidden {
+  display: none !important;
+}
+
 /* Modal Backdrop */
 .modal-overlay {
   background: rgba(10, 14, 22, 0.85);
   backdrop-filter: blur(8px);
 }
 
-/* Transitions */
+.modal-overlay.hidden,
+#modal-signal-plan.hidden,
+#modal-report-incident.hidden,
+#node-modal.hidden {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+
+/* Transitions & View Display Management */
 .tab-view {
-  display: none;
+  display: none !important;
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
 }
 
 .tab-view.active {
-  display: block;
+  display: flex !important;
+  flex-direction: column;
   opacity: 1;
 }
+
+/* Ensure all interactive triggers show pointer cursor and smooth hover */
+button, 
+.nav-link, 
+.horizon-btn, 
+.top-horizon-btn, 
+.forecast-h-btn, 
+.layer-chip, 
+select {
+  cursor: pointer;
+}
+
 
 /* Range Input */
 input[type="range"]::-webkit-slider-thumb {

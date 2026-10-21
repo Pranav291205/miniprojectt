@@ -1,0 +1,14 @@
+# Ignore large backend and training artifacts from Vercel deployment
+backend/target/
+backend/src/
+backend/pom.xml
+backend/mvnw*
+ml/
+designs/
+docs/
+.git/
+.agents/
+.pytest_cache/
+*.bat
+*.sh
+*.log

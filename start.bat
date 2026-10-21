@@ -44,11 +44,14 @@ echo [INFO] Google Maps API & Live Traffic Layer are connected.
 echo [INFO] In-Memory H2 Database initialized with 325 highway sensors.
 echo.
 echo ==============================================================================
-echo    TrafficIQ is live at: http://localhost:8080/
+echo    Starting TrafficIQ server on port 8080...
+echo    Your browser will automatically open http://localhost:8080/ once ready!
 echo    Press Ctrl+C in this console to stop the server.
 echo ==============================================================================
 echo.
 
-start http://localhost:8080/
-java -jar backend\target\trafficiq-backend-1.0.0.jar
+REM Background poller opens default browser as soon as server responds on port 8080
+start /B powershell -NoProfile -ExecutionPolicy Bypass -Command "for ($i = 0; $i -lt 120; $i++) { try { $r = [System.Net.WebRequest]::Create('http://localhost:8080/'); $r.Timeout = 1500; $resp = $r.GetResponse(); if ($resp.StatusCode -eq 200) { $resp.Close(); Start-Process 'http://localhost:8080/'; break; } $resp.Close(); } catch { Start-Sleep -Milliseconds 1000 } }"
+
+java -XX:+TieredCompilation -XX:TieredStopAtLevel=1 -jar backend\target\trafficiq-backend-1.0.0.jar
 pause

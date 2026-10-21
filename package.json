@@ -1,0 +1,18 @@
+{
+  "name": "trafficiq",
+  "version": "1.0.0",
+  "description": "TrafficIQ — Predictive Traffic Intelligence & Corridor Operations Platform",
+  "scripts": {
+    "start": "serve .",
+    "build": "echo 'TrafficIQ ready for Vercel deployment'"
+  },
+  "keywords": [
+    "traffic",
+    "onnx",
+    "leaflet",
+    "corridor",
+    "gis"
+  ],
+  "author": "TrafficIQ Team",
+  "license": "MIT"
+}

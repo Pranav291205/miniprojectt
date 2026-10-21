@@ -10,7 +10,7 @@ class TrafficMapManager {
     this.map = null;
     this.currentRegion = 'seattle'; // 'seattle' or 'bayarea'
     this.apiKey = 'AIzaSyD0JIwXnofK8a7xvVrlSuYHqA3iwUcubg4';
-    this.currentBasemap = 'google-traffic'; // 'google-traffic', 'google-sat', 'google-roads', 'carto-dark'
+    this.currentBasemap = 'esri-dark'; // Default to clean, reliable ESRI tactical dark tiles
     this.baseLayers = {};
     this.activeBaseLayer = null;
     
@@ -28,7 +28,11 @@ class TrafficMapManager {
   }
 
   init(onNodeSelected) {
-    this.onNodeSelectedCallback = onNodeSelected;
+    if (onNodeSelected) this.onNodeSelectedCallback = onNodeSelected;
+    if (this.map) {
+      this.invalidateSize();
+      return;
+    }
     const container = document.getElementById(this.containerId);
     if (!container) return;
 
@@ -56,14 +60,26 @@ class TrafficMapManager {
 
     // Initial render
     this.loadRegion('seattle');
+    this.invalidateSize();
   }
 
   setupBaseLayers() {
     this.baseLayers = {
+      'esri-dark': L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+        minZoom: 2,
+        maxNativeZoom: 16,
+        maxZoom: 19,
+        attribution: 'Tiles &copy; Esri &mdash; Dark Tactical Canvas'
+      }),
+      'osm-standard': L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: 'OpenStreetMap'
+      }),
       'google-traffic': L.tileLayer(`https://mt{s}.google.com/vt/lyrs=m,traffic&x={x}&y={y}&z={z}&key=${this.apiKey}`, {
         subdomains: ['0', '1', '2', '3'],
         maxZoom: 20,
-        attribution: 'Google Maps Live Traffic'
+        attribution: 'Google Maps Live Traffic',
+        errorTileUrl: 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/0/0/0'
       }),
       'google-sat': L.tileLayer(`https://mt{s}.google.com/vt/lyrs=y&x={x}&y={y}&z={z}&key=${this.apiKey}`, {
         subdomains: ['0', '1', '2', '3'],
@@ -74,11 +90,6 @@ class TrafficMapManager {
         subdomains: ['0', '1', '2', '3'],
         maxZoom: 20,
         attribution: 'Google Maps Standard'
-      }),
-      'carto-dark': L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-        subdomains: 'abcd',
-        maxZoom: 20,
-        attribution: 'CartoDB Dark Matter'
       })
     };
   }
@@ -88,7 +99,7 @@ class TrafficMapManager {
     if (!this.baseLayers || Object.keys(this.baseLayers).length === 0) {
       this.setupBaseLayers();
     }
-    const layer = this.baseLayers[name] || this.baseLayers['google-traffic'];
+    const layer = this.baseLayers[name] || this.baseLayers['esri-dark'] || this.baseLayers['osm-standard'];
     if (!layer) return;
 
     if (this.activeBaseLayer && this.map.hasLayer(this.activeBaseLayer)) {
@@ -98,6 +109,24 @@ class TrafficMapManager {
     this.activeBaseLayer = layer;
     this.activeBaseLayer.addTo(this.map);
     this.activeBaseLayer.bringToBack();
+  }
+
+  toggleLayer(layerName, visible) {
+    if (!this.map) return;
+    const layerMap = {
+      'corridors': this.corridorLayer,
+      'sensors': this.sensorLayer,
+      'incidents': this.incidentLayer,
+      'routes': this.routeLayer,
+      'diversions': this.diversionLayer
+    };
+    const target = layerMap[layerName];
+    if (!target) return;
+    if (visible) {
+      if (!this.map.hasLayer(target)) this.map.addLayer(target);
+    } else {
+      if (this.map.hasLayer(target)) this.map.removeLayer(target);
+    }
   }
 
   setApiKey(key) {
@@ -441,7 +470,9 @@ class TrafficMapManager {
       dashArray: '12, 6'
     }).addTo(this.diversionLayer);
 
-    this.map.flyTo([47.620, -122.260], 12.5, { duration: 1 });
+    if (this.map) {
+      this.map.flyTo([47.620, -122.260], 12.5, { duration: 1 });
+    }
   }
 
   plotCustomRoute(coordinates) {
@@ -456,14 +487,17 @@ class TrafficMapManager {
       opacity: 0.9
     }).addTo(this.routeLayer);
 
-    this.map.fitBounds(poly.getBounds(), { padding: [50, 50] });
+    if (this.map && poly.getBounds().isValid()) {
+      this.map.fitBounds(poly.getBounds(), { padding: [50, 50] });
+    }
   }
 
   invalidateSize() {
     if (this.map) {
-      setTimeout(() => {
-        this.map.invalidateSize();
-      }, 150);
+      setTimeout(() => { if (this.map) this.map.invalidateSize(); }, 50);
+      setTimeout(() => { if (this.map) this.map.invalidateSize(); }, 150);
+      setTimeout(() => { if (this.map) this.map.invalidateSize(); }, 350);
+      setTimeout(() => { if (this.map) this.map.invalidateSize(); }, 700);
     }
   }
 
@@ -485,3 +519,4 @@ class TrafficMapManager {
     }
   }
 }
+
